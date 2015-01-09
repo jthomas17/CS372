@@ -32,7 +32,7 @@ public class PR1_4 {
         /**
          * give PI a value
          */
-        final double PI = 3.14;
+        final double PI = 3.14; //PT: use java.lang.Math.PI
         /**
          * calculates area of circle based off user radius
          */
