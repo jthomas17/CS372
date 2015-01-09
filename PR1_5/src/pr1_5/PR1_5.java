@@ -15,6 +15,7 @@ public class PR1_5 {
     /**
      * generates 25 random int values and then compares then to another random generated number
      */
+     //PT: need javadoc comments for main. -2
     public static void main(String[] args) {
         Random rand = new Random();
         Random rand2 = new Random(20);
