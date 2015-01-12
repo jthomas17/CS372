@@ -23,7 +23,7 @@ public class ValueofPI {
 
         for (int a = 1; a < _userInput; a += 2) {
             sum += (double) (n * (4.0 / a));
-            n = (n == -1) ? 1 : -1;
+            n = (n == -1) ? 1 : -1; //PT - good!
         }
         return sum;
 

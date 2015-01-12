@@ -102,7 +102,7 @@ public class Homework extends javax.swing.JFrame {
 
     private void EnterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterActionPerformed
         // TODO add your handling code here:
-        
+        //PT -- we don't need this function, right?
     }//GEN-LAST:event_EnterActionPerformed
     
     private void buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActionPerformed

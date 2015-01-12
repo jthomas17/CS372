@@ -6,6 +6,9 @@
 
 package pr2_1;
 import java.util.*;
+
+//PT: Don't forget to use comments when you check into GitHub
+
 /**
  *
  * @author jthomas17

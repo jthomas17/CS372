@@ -20,6 +20,7 @@ public class HomeworkTracker {
     HomeworkTracker(){
     
     }
+    //PT -- why add1, rather than add?
     public void add1(double c){
         grade.add(c);
     }

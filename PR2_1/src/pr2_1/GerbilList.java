@@ -10,6 +10,8 @@ import java.util.*;
  *
  * @author jthomas17
  */
+//PT - this will work, but you could also have your class inherit from ArrayList,
+//     since these methods are simply calling the ArrayList methods.
 public class GerbilList {
     private List list = new ArrayList();
     public void add(Gerbil gerbil){

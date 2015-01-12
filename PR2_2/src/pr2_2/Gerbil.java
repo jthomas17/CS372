@@ -7,6 +7,7 @@
 package pr2_2;
 import java.util.*;
 
+//PT - Instead of copying this class over, import it from PR2_1. -2
 /**
  *
  * @author jthomas17

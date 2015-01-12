@@ -11,6 +11,8 @@ import java.util.*;
  *
  * @author jthomas17
  */
+//PT - I think of a Cookie as a single thing, not a class that
+//    accumulates values. Maybe CookieCalculator?
 public class Cookie {
     int thinMint = 0;
     int samoas = 0;
