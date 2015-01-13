@@ -16,6 +16,11 @@ public class Triangle extends Shape{
         side1 = s1;
         side2 = s2;
         side3 = s3;
+         if (side1 + side2 <= side3 && side1 + side3 <= side2 && side2 + side3 <= side1|| side1 == 0 || side2 == 0 || side3 == 0) {
+            String msg = "Side 1 and 2 must add up to be greater than base side and all sides must"
+                    + "be more than 0";
+            throw new IllegalArgumentException(msg);
+        }
     }
     @Override
     public double getArea(){

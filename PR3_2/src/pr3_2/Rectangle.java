@@ -15,7 +15,12 @@ public class Rectangle extends Shape{
     int _height = 0;
     public Rectangle(int width, int height){
         _width = width;
-        _height = height;        
+        _height = height;
+        String msg = "Sides must be more than 0";
+        if(width == 0 || height == 0){
+            
+            throw new IllegalArgumentException(msg);
+        }
     }
     @Override
     public double getArea(){

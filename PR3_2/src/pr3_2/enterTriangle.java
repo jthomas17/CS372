@@ -27,10 +27,6 @@ public class enterTriangle {
         Triangle t = new Triangle(side1, side2, side3);
         System.out.println("Area: " + t.getArea());
         System.out.println("Perimeter: " + t.getPerimeter());
-        if (side1 + side2 <= side3) {
-            System.out.println("First two sides need to add up to longer than the base side. Enter sides again!");
-            System.out.println();
-            enter();
-        }
+        
     }
 }

@@ -12,7 +12,7 @@ import java.util.*;
 public class enterEllipse {
     Menu m = new Menu();
 Scanner input = new Scanner(System.in);
-    public void enter() {
+    public void enter (){
         System.out.println("Please enter the two radiuses of the ellipse: ");
         System.out.println("First radius: ");
         int radius1 = input.nextInt();
@@ -21,6 +21,7 @@ Scanner input = new Scanner(System.in);
         Ellipse e = new Ellipse(radius1, radius2);
         System.out.println("Area: " + e.getArea());
         System.out.println("Perimeter: " + e.getPerimeter());
+       
     }
 }
 
