@@ -3,19 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package PR3_3;
+
+import java.util.Comparator;
 
 /**
  *
- * @author jthomas17
+ * @author Jarek
  */
-public class Event {
-    public String date="";
-    public String location="";
-    public String event="";
-    
-    public String getLocation(){
-        return location;
+public class LocationComparator implements Comparator<Event> {
+    public int compare(Event f1, Event f2) {
+        return f1.getLocation().compareTo(f2.getLocation());
     }
 }
