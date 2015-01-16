@@ -13,7 +13,7 @@ import java.util.Collections;
  * @author jthomas17
  */
 public class Calendar extends javax.swing.JFrame {
-    EventList x = new EventList();
+    static EventList x = new EventList();
 
     /**
      * Creates new form Calendar
@@ -66,7 +66,7 @@ public class Calendar extends javax.swing.JFrame {
 
         jLabel2.setText("Location");
 
-        jLabel3.setText("Date");
+        jLabel3.setText("Date mm/dd/yyyy");
 
         jButton2.setText("List Event");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -107,7 +107,7 @@ public class Calendar extends javax.swing.JFrame {
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                                 .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
@@ -223,6 +223,7 @@ public class Calendar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                x.rd();
                 new Calendar().setVisible(true);
             }
         });
