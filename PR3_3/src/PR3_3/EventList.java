@@ -81,4 +81,13 @@ public class EventList {
 
         return display;
     }
+    public void SortLocation(){
+        Collections.sort(list, new LocationComparator());
+    }
+    public void SortDate(){
+        Collections.sort(list, new DateComparator());
+    }
+    public void SortName(){
+        Collections.sort(list, new NameComparator());
+    }
 }

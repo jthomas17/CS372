@@ -18,4 +18,10 @@ public class Event {
     public String getLocation() {
         return location;
     }
+    public String getDate(){
+        return date;
+    }
+    public String getName(){
+        return event;
+    }
 }
