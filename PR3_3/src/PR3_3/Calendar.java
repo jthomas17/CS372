@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package PR3_3;
 
 import java.util.Collections;
@@ -13,6 +12,7 @@ import java.util.Collections;
  * @author jthomas17
  */
 public class Calendar extends javax.swing.JFrame {
+
     static EventList x = new EventList();
 
     /**
@@ -20,6 +20,10 @@ public class Calendar extends javax.swing.JFrame {
      */
     public Calendar() {
         initComponents();
+
+        x.SortDate();
+        TextArea.setText(x.print());
+
     }
 
     /**
@@ -185,7 +189,7 @@ public class Calendar extends javax.swing.JFrame {
 
     private void sortLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortLocationActionPerformed
         x.SortLocation();
-        TextArea.setText(x.print());        
+        TextArea.setText(x.print());
     }//GEN-LAST:event_sortLocationActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
