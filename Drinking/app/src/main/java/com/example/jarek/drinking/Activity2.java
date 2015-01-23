@@ -1,5 +1,6 @@
 package com.example.jarek.drinking;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,17 +12,21 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import static java.security.AccessController.getContext;
+
 
 public class Activity2 extends ActionBarActivity {
-int num;
-    Math m = new Math();
+
+    double met;
+    double alc;
+    int weight;
+
     Person p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -48,32 +53,36 @@ int num;
         TextView n = (TextView)findViewById(R.id.name);
         TextView w = (TextView)findViewById(R.id.weight);
         String g = w.getText().toString();
-        int weight = Integer.parseInt(g);
+        weight = Integer.parseInt(g);
         CharSequence name = n.getText();
         CheckBox m = (CheckBox)findViewById(R.id.male);
         CheckBox f = (CheckBox)findViewById(R.id.female);
         if(m.isChecked()){
-            double met = .015;
-            double alc = .73;
+        met = .015;
+        alc = .73;
             p = new Person(name,weight,met,alc);
         }
         else if (f.isChecked()){
-            double met = .017;
-            double alc = .66;
+        met = .017;
+        alc = .66;
             p = new Person(name,weight,met,alc);
         }
-      //  Intent launchActivity = new Intent(getApplicationContext(), Activity3.class);
-       // startActivity(launchActivity);
+        Intent launchActivity = new Intent(getApplicationContext(), Activity3.class);
+        launchActivity.putExtra("weight", weight);
+        launchActivity.putExtra("met", met);
+        launchActivity.putExtra("alc", alc);
+        startActivity(launchActivity);
 
-
-        //TextView t = (TextView)findViewById(R.id.test);
-        //t.setText(p._name);
     }
-    public void toggleLabel4(View v){
-        num+=1;
 
-        TextView t= (TextView)findViewById(R.id.bac);
-        String meh = String.format("%1.3f", m.setAlcohol(num, p.getWeight(),p.getAlc(),p.getMet()));
-        t.setText(meh);
+    public void save(View v){
+        io o = new io();
+
+        o.save(this);
+    }
+    public void load(View v){
+        io o = new io();
+
+        o.load(this);
     }
 }

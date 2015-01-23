@@ -18,6 +18,7 @@ public class Person {
         _name = name;
         _weight = weight;
     }
+    public Person(){};
     public CharSequence getName(){
         return _name;
     }

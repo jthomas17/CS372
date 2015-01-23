@@ -5,7 +5,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.jarek.drinking.Activity2"
-    android:focusableInTouchMode="false">
+    android:focusableInTouchMode="false"
+    android:background="#000000">
+
+
 
     <EditText
         android:layout_width="wrap_content"
@@ -15,7 +18,9 @@
         android:id="@+id/name"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#FFFFFF"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,7 +40,9 @@
         android:id="@+id/textView2"
         android:layout_alignBottom="@+id/name"
         android:layout_toRightOf="@+id/name"
-        android:layout_toEndOf="@+id/name" />
+        android:layout_toEndOf="@+id/name"
+        android:textColor="#FFFFFF"
+        />
 
     <EditText
         android:layout_width="wrap_content"
@@ -44,7 +51,9 @@
         android:ems="10"
         android:id="@+id/weight"
         android:layout_below="@+id/name"
-        android:layout_marginTop="27dp" />
+        android:layout_marginTop="27dp"
+        android:textColor="#FFFFFF"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -54,7 +63,9 @@
         android:id="@+id/textView4"
         android:layout_alignBottom="@+id/weight"
         android:layout_toRightOf="@+id/weight"
-        android:layout_toEndOf="@+id/weight" />
+        android:layout_toEndOf="@+id/weight"
+        android:textColor="#FFFFFF"
+        />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -65,7 +76,9 @@
         android:checked="false"
         android:layout_below="@+id/weight"
         android:layout_toRightOf="@+id/weight"
-        android:layout_toEndOf="@+id/weight" />
+        android:layout_toEndOf="@+id/weight"
+        android:textColor="#FFFFFF"
+        />
 
     <CheckBox
         android:layout_width="wrap_content"
@@ -75,7 +88,9 @@
         android:checked="false"
         android:layout_below="@+id/male"
         android:layout_alignLeft="@+id/male"
-        android:layout_alignStart="@+id/male" />
+        android:layout_alignStart="@+id/male"
+        android:textColor="#FFFFFF"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,17 +100,8 @@
         android:layout_below="@+id/button3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="53dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="get BAC"
-        android:id="@+id/button5"
-        android:onClick="toggleLabel4"
-        android:layout_marginTop="24dp"
-        android:layout_below="@+id/bac"
-        android:layout_alignRight="@+id/bac"
-        android:layout_alignEnd="@+id/bac" />
+        android:layout_marginTop="53dp"
+        android:textColor="#FFFFFF"
+        />
 
 </RelativeLayout>
