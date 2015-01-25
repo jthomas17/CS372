@@ -19,7 +19,8 @@ public class EventList {
     List<String> list2 = new <String>ArrayList();
     public void rd() {
 
-        File f = new File("C:\\Users\\jthomas17\\Documents\\text.txt");
+        //Don't need to give the full path
+        File f = new File("text.txt");
         try {
             list.clear();
             list2.clear();
@@ -43,7 +44,7 @@ public class EventList {
 
     public void rt(String x, String y, String z) {
 
-        File f = new File("C:\\Users\\jthomas17\\Documents\\text.txt");
+        File f = new File("text.txt");
         try {
             Event newEvent = new Event();
             newEvent.date = x;

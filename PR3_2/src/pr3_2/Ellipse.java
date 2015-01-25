@@ -15,6 +15,7 @@ public class Ellipse extends Shape{
     public Ellipse(int r1, int r2){
         radius = r1;
         radius2 = r2;
+        //PT -- if (r1 <= 0 || r2 <= 0) -3
         if(r1 == 0 || r1 == 0){
             String msg = "radius must be greater than 0";
             throw new IllegalArgumentException(msg);

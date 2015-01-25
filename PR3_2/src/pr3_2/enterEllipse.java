@@ -9,6 +9,8 @@ import java.util.*;
  *
  * @author jthomas17
  */
+//PT -- Good that you broke this out. Is it possible to make this more generic, too?
+//     This is similar to enterRectangle and enterTriangle
 public class enterEllipse {
     Menu m = new Menu();
 Scanner input = new Scanner(System.in);

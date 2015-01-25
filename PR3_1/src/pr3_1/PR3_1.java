@@ -22,7 +22,10 @@ public class PR3_1 {
             ui._userInput();
         }
         
+        //PT -- the user should be able to retry getting the value, rather than just getting
+        //     results for whatever was entered. -3
         catch(Exception ex){
+            //This showed, "Entered non-int valuenull", which isn't quite readable
             System.out.println("Entered non-int value" +ex.getMessage());
         }
         finally{
