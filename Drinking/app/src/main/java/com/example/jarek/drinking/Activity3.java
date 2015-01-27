@@ -83,8 +83,14 @@ Math m = new Math();
         String meh = String.format("%1.3f", totalBAC);
         t.setText(meh);
         double lol = Double.parseDouble(meh);
-        if(lol >= .081){
-            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        if(lol >= .081 && lol < .25){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .25 && lol < .35){
+            Toast.makeText(this, "You are going to black out at this point.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .35){
+            Toast.makeText(this, "Medical attention advised, may lapse into coma.", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -106,8 +112,14 @@ Math m = new Math();
         String meh = String.format("%1.3f", totalBAC);
         t.setText(meh);
         double lol = Double.parseDouble(meh);
-        if(lol >= .081){
-            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        if(lol >= .081 && lol < .25){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .25 && lol < .35){
+            Toast.makeText(this, "You are going to black out at this point.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .35){
+            Toast.makeText(this, "Medical attention advised, may lapse into coma.", Toast.LENGTH_SHORT).show();
         }
     }
     public void wine(View v){
@@ -129,8 +141,42 @@ Math m = new Math();
         String meh = String.format("%1.3f", totalBAC);
         t.setText(meh);
         double lol = Double.parseDouble(meh);
-        if(lol >= .081){
-            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        if(lol >= .081 && lol < .25){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .25 && lol < .35){
+            Toast.makeText(this, "You are going to black out at this point.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .35){
+            Toast.makeText(this, "Medical attention advised, may lapse into coma.", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void cocktail(View V){
+        num+=1.2;
+        TextView t= (TextView)findViewById(R.id.bac);
+        //String test = String.format("%d", a.weight);
+        if(count < 1) {
+            tsLong = System.currentTimeMillis() / 1000;
+            System.out.println(+tsLong);
+            count++;
+        }
+        tsLong2 = System.currentTimeMillis() / 1000;
+        System.out.println(+tsLong2);
+        count++;
+        h = (tsLong2 - tsLong) / 1000;
+        System.out.println(+h);
+        totalBAC = m.setAlcohol(num, weight, alc, met, h);
+        String meh = String.format("%1.3f", totalBAC);
+        t.setText(meh);
+        double lol = Double.parseDouble(meh);
+        if(lol >= .081 && lol < .25){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .25 && lol < .35){
+            Toast.makeText(this, "You are going to black out at this point.", Toast.LENGTH_SHORT).show();
+        }
+        if(lol >= .35){
+            Toast.makeText(this, "Medical attention advised, may lapse into coma.", Toast.LENGTH_SHORT).show();
         }
     }
 }
