@@ -13,15 +13,24 @@ import android.widget.TextView;
 public class MainActivity extends ActionBarActivity {
     String name;
     private Spinner spinner;
-    private static final String[]paths = {"item 1", "item 2", "item 3"};
+    io ii = new io();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        ii.load(this);
+        //ii.Name.add("HELLO");
+        //ii.Name.add("NAMe");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Spinner dropdown = (Spinner)findViewById(R.id.drop);
-        String[] items = new String[]{"1", "2", "three"};
+        String[] items = new String[ii.Name.size()];
+        for(int i = 0; i<ii.Name.size();i++){
+            String s =ii.Name.get(i);
+            items[i]=s;
+        }
+       //for(int i = 0; i < ii.Name.size(); i++){items[i] = ii.Name.get(1);}
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
         dropdown.setAdapter(adapter);
+
     }
 
 
@@ -53,6 +62,9 @@ public class MainActivity extends ActionBarActivity {
     public void toggleLabel2(View V){
         Spinner f = (Spinner) findViewById(R.id.drop);
         name = (String) f.getSelectedItem();
+        Intent launchActivity1 = new Intent(getApplicationContext(), Activity3.class);
+        launchActivity1.putExtra("name", name);
+        startActivity(launchActivity1);
         //go to new activity
     }
 

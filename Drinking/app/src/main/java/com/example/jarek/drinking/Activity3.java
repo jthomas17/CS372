@@ -7,24 +7,40 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class Activity3 extends ActionBarActivity {
 Math m = new Math();
-    Activity2 a = new Activity2();
+    double h;
     double num = 0;
     int weight;
     double alc;
     double met;
+    double tsLong = 0;
+    double tsLong2 = 0;
+    int count = 0;
+    double totalBAC=0;
+    String Nameactivity1;
+    String Nameactivity2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity3);
+        io o = new io();
+        o.load(this);
         Intent i = getIntent();
-        weight = (int) i.getExtras().get("weight");
-        alc = (double) i.getExtras().get("alc");
-        met = (double) i.getExtras().get("met");
 
+        Nameactivity2 = (String) i.getExtras().get("name");
+        Nameactivity1 = (String) i.getExtras().get("name");
+        for(int j = 0; j<o.list.size();j++){
+            if (o.list.get(j)._name.equals(Nameactivity1)||o.list.get(j)._name.equals(Nameactivity2)){
+                alc = o.list.get(j)._alcohol_distribution;
+                weight = o.list.get(j)._weight;
+                met = o.list.get(j)._metabolism;
+
+            }
+        }
     }
 
 
@@ -50,11 +66,72 @@ Math m = new Math();
 
         return super.onOptionsItemSelected(item);
     }
-    public void toggleLabel4(View v){
+    public void shot(View v){
+
         num+=.6;
         TextView t= (TextView)findViewById(R.id.bac);
-        String meh = String.format("%1.3f", m.setAlcohol(num, weight, alc, met));
         //String test = String.format("%d", a.weight);
+        if(count < 1) {
+            tsLong = System.currentTimeMillis() / 1000;
+            System.out.println(+tsLong);
+            count++;
+        }
+        tsLong2 = System.currentTimeMillis() / 1000;
+        count++;
+        h = (tsLong2 - tsLong) / 1000;
+        totalBAC =  m.setAlcohol(num, weight, alc, met, h);
+        String meh = String.format("%1.3f", totalBAC);
         t.setText(meh);
+        double lol = Double.parseDouble(meh);
+        if(lol >= .081){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void beer(View v){
+
+        num+=.6;
+        TextView t= (TextView)findViewById(R.id.bac);
+        //String test = String.format("%d", a.weight);
+        if (count < 1) {
+            tsLong = System.currentTimeMillis() / 1000;
+            System.out.println(+tsLong);
+            count++;
+        }
+        tsLong2 = System.currentTimeMillis() / 1000;
+        count++;
+        System.out.println(+count);
+        h = (tsLong2 - tsLong) / 1000;
+        totalBAC =  m.setAlcohol(num, weight, alc, met, h);
+        String meh = String.format("%1.3f", totalBAC);
+        t.setText(meh);
+        double lol = Double.parseDouble(meh);
+        if(lol >= .081){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        }
+    }
+    public void wine(View v){
+
+        num+=.6;
+        TextView t= (TextView)findViewById(R.id.bac);
+        //String test = String.format("%d", a.weight);
+        if(count < 1) {
+            tsLong = System.currentTimeMillis() / 1000;
+            System.out.println(+tsLong);
+            count++;
+        }
+        tsLong2 = System.currentTimeMillis() / 1000;
+        System.out.println(+tsLong2);
+        count++;
+        h = (tsLong2 - tsLong) / 1000;
+        System.out.println(+h);
+        totalBAC = m.setAlcohol(num, weight, alc, met, h);
+        String meh = String.format("%1.3f", totalBAC);
+        t.setText(meh);
+        double lol = Double.parseDouble(meh);
+        if(lol >= .081){
+            Toast.makeText(this, "You are not legal to drive, please call cab.", Toast.LENGTH_LONG).show();
+        }
     }
 }
+

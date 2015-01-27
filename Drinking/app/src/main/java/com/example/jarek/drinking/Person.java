@@ -6,15 +6,15 @@ package com.example.jarek.drinking;
 public class Person {
     int _weight;
     double _metabolism, _alcohol_distribution;
-    CharSequence _name;
-    public Person(CharSequence name, int weight, double metabolism, double alcohol_distribution){
+    String _name;
+    public Person(String name, int weight, double metabolism, double alcohol_distribution){
         _name = name;
         _weight = weight;
         _metabolism = metabolism;
         //_alcohol = alcohol;
         _alcohol_distribution = alcohol_distribution;
     }
-    public Person(CharSequence  name, int weight){
+    public Person(String name, int weight){
         _name = name;
         _weight = weight;
     }

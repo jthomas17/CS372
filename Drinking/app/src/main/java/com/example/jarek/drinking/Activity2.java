@@ -16,17 +16,21 @@ import static java.security.AccessController.getContext;
 
 
 public class Activity2 extends ActionBarActivity {
-
+    io i = new io();
     double met;
     double alc;
     int weight;
+    String name;
+
 
     Person p;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity2);
+        i.load(this);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -50,28 +54,42 @@ public class Activity2 extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
     public void toggleLabel3(View v){
-        TextView n = (TextView)findViewById(R.id.name);
-        TextView w = (TextView)findViewById(R.id.weight);
-        String g = w.getText().toString();
-        weight = Integer.parseInt(g);
-        CharSequence name = n.getText();
-        CheckBox m = (CheckBox)findViewById(R.id.male);
-        CheckBox f = (CheckBox)findViewById(R.id.female);
-        if(m.isChecked()){
-        met = .015;
-        alc = .73;
-            p = new Person(name,weight,met,alc);
+        try {
+            TextView n = (TextView) findViewById(R.id.name);
+            TextView w = (TextView) findViewById(R.id.weight);
+            String g = w.getText().toString();
+            weight = Integer.parseInt(g);
+            name = n.getText().toString();
+            CheckBox m = (CheckBox) findViewById(R.id.male);
+            CheckBox f = (CheckBox) findViewById(R.id.female);
+            if (m.isChecked()) {
+                met = .015;
+                alc = .73;
+                p = new Person(name, weight, met, alc);
+                i.adduser(p);
+                i.popstring();
+                i.save(this);
+                i.load(this);
+            } else if (f.isChecked()) {
+                met = .017;
+                alc = .66;
+                p = new Person(name, weight, met, alc);
+                i.adduser(p);
+                i.popstring();
+                i.save(this);
+                i.load(this);
+            }
+            Intent launchActivity = new Intent(getApplicationContext(), Activity3.class);
+            launchActivity.putExtra("weight", weight);
+            launchActivity.putExtra("met", met);
+            launchActivity.putExtra("alc", alc);
+            launchActivity.putExtra("name", name);
+            startActivity(launchActivity);
         }
-        else if (f.isChecked()){
-        met = .017;
-        alc = .66;
-            p = new Person(name,weight,met,alc);
+        catch(Exception ex){
+            TextView n = (TextView) findViewById(R.id.name);
+            n.setText("ENTER CORRECT VALUE");
         }
-        Intent launchActivity = new Intent(getApplicationContext(), Activity3.class);
-        launchActivity.putExtra("weight", weight);
-        launchActivity.putExtra("met", met);
-        launchActivity.putExtra("alc", alc);
-        startActivity(launchActivity);
 
     }
 
