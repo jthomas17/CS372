@@ -67,7 +67,8 @@ Math m = new Math();
         return super.onOptionsItemSelected(item);
     }
     public void shot(View v){
-
+    //PT -- these functions look copy/paste (other than the values). Maybe a Shot class, Beer class, etc., to hold
+    //   the values? I think it'll make this code much cleaner
         num+=.6;
         TextView t= (TextView)findViewById(R.id.bac);
         //String test = String.format("%d", a.weight);
