@@ -17,7 +17,7 @@ public class FileReader {
     public List<Restaurant> list = new <Restaurant> ArrayList();
     public String names = "";
     int data;
-
+//PT -- javadoc? -4
     public void save() {
         /**
          *
