@@ -17,6 +17,7 @@ import static java.security.AccessController.getContext;
 
 public class Activity2 extends ActionBarActivity {
     io i = new io();
+    //PT -- Why not use your person class as the member variable, rather than the parts that make up a Person?
     double met;
     double alc;
     int weight;
@@ -63,6 +64,7 @@ public class Activity2 extends ActionBarActivity {
             CheckBox m = (CheckBox) findViewById(R.id.male);
             CheckBox f = (CheckBox) findViewById(R.id.female);
             if (m.isChecked()) {
+                //PT -- add some comments on where these numbers came from.
                 met = .015;
                 alc = .73;
                 p = new Person(name, weight, met, alc);
@@ -80,6 +82,7 @@ public class Activity2 extends ActionBarActivity {
                 i.load(this);
             }
             Intent launchActivity = new Intent(getApplicationContext(), Activity3.class);
+            //PT -- nice work here
             launchActivity.putExtra("weight", weight);
             launchActivity.putExtra("met", met);
             launchActivity.putExtra("alc", alc);
